@@ -743,7 +743,9 @@ input::-webkit-input-placeholder {
 /**************************************************************************************/
 
 
-
+#comment-form .comment-notes{
+  margin-bottom: 30px;
+}
 
 #comment-form input.error,
 		#comment-form textarea.error{
@@ -793,4 +795,75 @@ input::-webkit-input-placeholder {
 		}
 		.comment-box{
 			padding:60px 0;
-		}
+    }
+    
+
+
+
+
+/************************************************************************************/
+/************************************************************************************/
+/**************************End Of Comment sections style style*****************************/
+/************************************************************************************/
+
+
+
+
+
+
+
+
+/**************************************************************************************/
+/**************************************************************************************/
+/**************************************************************************************/
+/******************************media items styles block*********************************/
+/**************************************************************************************/
+/**************************************************************************************/
+
+
+
+
+    .comments-area{
+      padding-top:16px;
+      border-top:1px solid #ccc;
+    }
+  
+    .comments-area .comments-title{
+      padding-left:10px;
+      padding-bottom:20px;
+      margin-left:4%
+    }
+
+    .comments-area .comments-title i{
+      color: #00a99d;
+    }
+    .comments-area ul{
+      list-style: none;
+    }
+  
+    .comments-area .avatar{
+      border-radius:50%;
+      margin-right:20px;
+    }
+    .comments-area cite.fn{
+      font-size:1.3rem;
+  
+    }
+    .comments-area span.says{
+      color:#ccc;
+    }
+    .comments-area .comment-author.vcard{
+      border-bottom:1px solid #ccc;
+      margin-bottom:15px; 
+      padding-bottom:20px
+    }
+    .comments-area .comment-body{
+      margin-bottom:10px;
+      padding-bottom:15px;
+    }
+    .comments-area .comment-meta{
+      margin-bottom:20px;
+    }
+    .comments-area .comment-meta > a{
+      color:#ccc;
+    }

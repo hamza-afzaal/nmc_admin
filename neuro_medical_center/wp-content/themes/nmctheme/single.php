@@ -55,7 +55,7 @@ get_header();
 							</discover_pingback_server_uri>
 							<div class="row post--author-block">
 								<div class="col-12 col-sm-12 col-md-2 col-lg-2 text-center">
-									<img src="<?php echo get_avatar_url(get_the_author_ID()) ?>" height="100%"/>
+									<img src="<?php echo get_avatar_url(get_the_author_ID()) ?>" height="100%" style="border-radius:50%;"/>
 								</div>
 								<div class="col-12 col-sm-12 col-md-10 col-lg-10">
 									<h4 class="post--author-title">
@@ -123,56 +123,11 @@ get_header();
 
 	</div>
 
-<div class="container-fluid" style="background-color:#f2f2f2;">
-		<div class="container" >
-			<div class="col-12 col-sm-10 col-md-8 col-lg-8 comment-box">
-				<h2>Leave a Reply</h2>
-				<p>Your email will not be published. Required fields are marked *</p>
-				<form id="comment-form" class="form-horizontal">
-					<div class="row">
-						<div class="col-12">
-							<div class="form-group">
-								<label for="comment-text">
-									Comment *
-								</label>
-								<textarea type="text" name="comment-text" class="form-control" rows="8" required></textarea>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-							<div class="form-group">
-								<label for="comment-name-text">
-									Name *
-								</label>
-								<input type="text" name="comment-name-text" class="form-control" required/>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-							<div class="form-group">
-								<label for="comment-email-text">
-									Email *
-								</label>
-								<input type="text" name="comment-email-text" class="form-control" required/>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-							<div class="form-group">
-								<label for="comment-website-text">
-									Website
-								</label>
-								<input type="text" name="comment-website-text" class="form-control"/>
-							</div>
-						</div>
-
-						<div class="col-12">
-							<input type="submit" class="btn btn-outline-success theme--btn-outline" value="Post Comment" required/>
-						</div>
-					</div>
-				</form>
-			</div>	
-		</div>
-	</div>
-
-	<?php comments_template(); ?>
+	<?php 
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
+		endif;
+	?>
 
 <!-- <?php echo do_shortcode( '[contact-form-7 id="56" title="Contact form 1"]'/*'[wpforms id="58"]'*/ ); ?> -->
 

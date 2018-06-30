@@ -18,8 +18,8 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					<li class="nav-item <?php if(is_page('home')){ echo 'active'; } ?>">
+						<a class="nav-link" href="<?php echo site_url('/home') ?>">Home</a>
 					</li>
 					<li class="nav-item <?php if(get_post_type() == 'post') { echo 'active';} ?>">
 						<a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
