@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head lang="en-us">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="
+	sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100i,300,300i,400,400i,500,500i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+	<script
+	src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+	<!-- font-family:'IBM Plex Sans',sans-serif; -->
+
+
+
+	<style type="text/css">
+		body{
+			font-family: 'IBM Plex Sans', sans-serif;
+		}
+		h3{
+			font-weight: 600;
+		}
+
+		#comment-form input.error,
+		#comment-form textarea.error{
+			outline:#fb9494;
+			border-color:#fb9494;
+			box-shadow: 0 0 0 0.2rem rgba(255,84,46,.25);
+		}
+		#comment-form label.error{
+			color:#E53B1E;
+		}
+
+		.theme--btn-outline{
+			color:#00a99d;
+			border-color:#00a99d;
+		}
+
+		.theme--btn-outline:hover,
+		.theme--btn-outline:active{
+			color: #fff;
+			background-color: #00a99d;
+			border-color:#00a99d;
+			outline:#00a99d;
+		}
+		.theme--btn-outline:focus,
+		.theme--btn-outline:focus:active{
+			box-shadow: 0 0 0 0.2rem rgba(0,169,157,.5);
+		}
+		.theme--btn-outline:not(:disabled):not(.disabled).active, 
+		.theme--btn-outline:not(:disabled):not(.disabled):active, 
+		.show>.theme--btn-outline.dropdown-toggle{
+			color: #fff;
+			background-color: #00a99d;
+			border-color:#00a99d;
+			outline:#00a99d;
+		}
+
+		.theme--btn-outline:not(:disabled):not(.disabled).active:focus, 
+		.theme--btn-outline:not(:disabled):not(.disabled):active:focus, 
+		.show>.theme--btn-outline.dropdown-toggle:focus{
+			box-shadow: 0 0 0 0.2rem rgba(0,169,157,.5);
+		}
+
+		input.form-control:focus,
+		textarea.form-control:focus{
+			box-shadow: 0 0 0 0.2rem rgba(0, 169, 157,.25);	
+			border-color: lightblue;
+		}
+		.comment-box{
+			padding:60px 0;
+		}
+	</style>
+	
+	<title>Home Page</title>
+</head>
+<body>
+	<br/>
+
+	<div class="container-fluid" style="background-color:#f2f2f2;">
+		<div class="container" >
+			<div class="col-12 col-sm-10 col-md-8 col-lg-8 comment-box">
+				<h2>Leave a Reply</h2>
+				<p>Your email will not be published. Required fields are marked *</p>
+				<form id="comment-form" class="form-horizontal">
+					<div class="row">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="comment-text">
+									Comment *
+								</label>
+								<textarea type="text" name="comment-text" class="form-control" rows="8" required></textarea>
+							</div>
+						</div>
+						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+							<div class="form-group">
+								<label for="comment-name-text">
+									Name *
+								</label>
+								<input type="text" name="comment-name-text" class="form-control" required/>
+							</div>
+						</div>
+						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+							<div class="form-group">
+								<label for="comment-email-text">
+									Email *
+								</label>
+								<input type="text" name="comment-email-text" class="form-control" required/>
+							</div>
+						</div>
+						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+							<div class="form-group">
+								<label for="comment-website-text">
+									Website
+								</label>
+								<input type="text" name="comment-website-text" class="form-control"/>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<input type="submit" class="btn btn-outline-success theme--btn-outline" value="Post Comment" required/>
+						</div>
+					</div>
+				</form>
+			</div>	
+		</div>
+	</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		/*************************************************************/
+		/**/
+		/* Side Panel animation of border and arrow 
+		/**/
+		/*************************************************************/
+
+		$("#comment-form").validate({
+		  // invalidHandler: function(event, validator) {
+		  //   // 'this' refers to the form
+		  //   var errors = validator.numberOfInvalids();
+		  //   if (errors) {
+		  //     var message = errors == 1
+		  //       ? 'You missed 1 field. It has been highlighted'
+		  //       : 'You missed ' + errors + ' fields. They have been highlighted';
+		  //     $("div.error span").html(message);
+		  //     $("div.error").show();
+		  //   } else {
+		  //     $("div.error").hide();
+		  //   }
+		  // }
+
+		  rules: {
+		    'comment-name-text': "required",
+		    'comment-text': "required",
+		    'comment-email-text': {
+		      required: true,
+		      email: true
+		    }
+		  },
+		  messages: {
+		    'comment-name-text': "Please specify your name",
+		    'comment-text': "Please specify your comment",
+		    'comment-email-text': {
+		      required: "We need your email address to contact you",
+		      email: "Your email address must be in the format of name@domain.com"
+		    }
+		  }
+		});
+
+
+		/*************************************************************/
+		/**/
+		/**/
+		/**/
+		/*************************************************************/
+	})
+</script>
+</body>
+</html>

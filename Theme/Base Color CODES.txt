@@ -1,0 +1,10 @@
+hex color codes
+
+
+light blue: 00a99d
+05857B
+
+darker blue: 0953a0
+
+
+darkish gray: #3c3d41
