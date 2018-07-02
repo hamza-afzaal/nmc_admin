@@ -25,122 +25,286 @@
 
 
 	<style type="text/css">
-		body{
-			font-family: 'IBM Plex Sans', sans-serif;
-		}
-		h3{
-			font-weight: 600;
-		}
+	body{
+		font-family: 'IBM Plex Sans', sans-serif;
+	}
+	h3{
+		font-weight: 600;
+	}
 
-		#comment-form input.error,
-		#comment-form textarea.error{
-			outline:#fb9494;
-			border-color:#fb9494;
-			box-shadow: 0 0 0 0.2rem rgba(255,84,46,.25);
-		}
-		#comment-form label.error{
-			color:#E53B1E;
-		}
+	#comment-form input.error,
+	#comment-form textarea.error{
+		outline:#fb9494;
+		border-color:#fb9494;
+		box-shadow: 0 0 0 0.2rem rgba(255,84,46,.25);
+	}
+	#comment-form label.error{
+		color:#E53B1E;
+	}
 
-		.theme--btn-outline{
-			color:#00a99d;
-			border-color:#00a99d;
-		}
+	.theme--btn-outline{
+		color:#00a99d;
+		border-color:#00a99d;
+	}
 
-		.theme--btn-outline:hover,
-		.theme--btn-outline:active{
-			color: #fff;
-			background-color: #00a99d;
-			border-color:#00a99d;
-			outline:#00a99d;
-		}
-		.theme--btn-outline:focus,
-		.theme--btn-outline:focus:active{
-			box-shadow: 0 0 0 0.2rem rgba(0,169,157,.5);
-		}
-		.theme--btn-outline:not(:disabled):not(.disabled).active, 
-		.theme--btn-outline:not(:disabled):not(.disabled):active, 
-		.show>.theme--btn-outline.dropdown-toggle{
-			color: #fff;
-			background-color: #00a99d;
-			border-color:#00a99d;
-			outline:#00a99d;
-		}
+	.theme--btn-outline:hover,
+	.theme--btn-outline:active{
+		color: #fff;
+		background-color: #00a99d;
+		border-color:#00a99d;
+		outline:#00a99d;
+	}
+	.theme--btn-outline:focus,
+	.theme--btn-outline:focus:active{
+		box-shadow: 0 0 0 0.2rem rgba(0,169,157,.5);
+	}
+	.theme--btn-outline:not(:disabled):not(.disabled).active, 
+	.theme--btn-outline:not(:disabled):not(.disabled):active, 
+	.show>.theme--btn-outline.dropdown-toggle{
+		color: #fff;
+		background-color: #00a99d;
+		border-color:#00a99d;
+		outline:#00a99d;
+	}
 
-		.theme--btn-outline:not(:disabled):not(.disabled).active:focus, 
-		.theme--btn-outline:not(:disabled):not(.disabled):active:focus, 
-		.show>.theme--btn-outline.dropdown-toggle:focus{
-			box-shadow: 0 0 0 0.2rem rgba(0,169,157,.5);
-		}
+	.theme--btn-outline:not(:disabled):not(.disabled).active:focus, 
+	.theme--btn-outline:not(:disabled):not(.disabled):active:focus, 
+	.show>.theme--btn-outline.dropdown-toggle:focus{
+		box-shadow: 0 0 0 0.2rem rgba(0,169,157,.5);
+	}
 
-		input.form-control:focus,
-		textarea.form-control:focus{
-			box-shadow: 0 0 0 0.2rem rgba(0, 169, 157,.25);	
-			border-color: lightblue;
-		}
-		.comment-box{
-			padding:60px 0;
-		}
-	</style>
-	
-	<title>Home Page</title>
+	input.form-control:focus,
+	textarea.form-control:focus{
+		box-shadow: 0 0 0 0.2rem rgba(0, 169, 157,.25);	
+		border-color: lightblue;
+	}
+	.comment-box{
+		padding:60px 0;
+	}
+
+
+	.comments-area{
+		padding-top:16px;
+		border-top:1px solid #ccc;
+	}
+
+	.comments-area .comments-title{
+		padding-left:10px;
+		padding-bottom:20px;
+	}
+	.comments-area ul{
+		list-style: none;
+	}
+
+	.comments-area .avatar{
+		border-radius:50%;
+		margin-right:20px;
+	}
+	.comments-area cite.fn{
+		font-size:1.3rem;
+
+	}
+	.comments-area span.says{
+		color:#ccc;
+	}
+	.comments-area .comment-body{
+		border-bottom:1px solid #ccc;
+		margin-bottom:10px;
+		padding-bottom:15px;
+	}
+	.comments-area .comment-meta{
+		margin-bottom:20px;
+	}
+	.comments-area .comment-meta > a{
+		color:#ccc;
+	}
+</style>
+
+<title>Home Page</title>
 </head>
 <body>
 	<br/>
 
-	<div class="container-fluid" style="background-color:#f2f2f2;">
-		<div class="container" >
-			<div class="col-12 col-sm-10 col-md-8 col-lg-8 comment-box">
-				<h2>Leave a Reply</h2>
-				<p>Your email will not be published. Required fields are marked *</p>
-				<form id="comment-form" class="form-horizontal">
-					<div class="row">
-						<div class="col-12">
-							<div class="form-group">
-								<label for="comment-text">
-									Comment *
-								</label>
-								<textarea type="text" name="comment-text" class="form-control" rows="8" required></textarea>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-							<div class="form-group">
-								<label for="comment-name-text">
-									Name *
-								</label>
-								<input type="text" name="comment-name-text" class="form-control" required/>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-							<div class="form-group">
-								<label for="comment-email-text">
-									Email *
-								</label>
-								<input type="text" name="comment-email-text" class="form-control" required/>
-							</div>
-						</div>
-						<div class="col-12 col-sm-12 col-md-4 col-lg-4">
-							<div class="form-group">
-								<label for="comment-website-text">
-									Website
-								</label>
-								<input type="text" name="comment-website-text" class="form-control"/>
+
+	<div class="container">
+		<div id="comments" class="comments-area">
+
+			<h3 class="comments-title">Comments (2) to 'New Blog Post'</h2>
+			<ul class="comment-list">
+				<li class="comment even thread-even depth-1 parent" id="comment-2">
+					<div id="div-comment-2" class="comment-body">
+						<div class="comment-author vcard">
+							<div class="row">
+								<div class="col-3 col-sm-3 col-md-2 col-lg-1">
+									<img src="http://1.gravatar.com/avatar/d0086b571459360691b6e90be170d846?s=74&amp;d=http%3A%2F%2Flocalhost%3A8080%2Fneuro_medical_center%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-96x96.png&amp;r=g" width="64" height="64" alt="" class="avatar avatar-74wp-user-avatar wp-user-avatar-74 alignnone photo avatar-default">			
+								</div>
+								<div class="col-6 col-sm-6 col-md-6 col-lg-6">
+									<cite class="fn">Hamza Afzaal</cite> <span class="says">says:</span><br/>		
+									<div class="comment-meta commentmetadata"><a href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/#comment-2">On 
+									June 29, 2018 at 8:26 pm</a></div>
+									<p>Hahaha very funny blog<br>
+									bullshit</p>
+									<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/?replytocom=2#respond" onclick="return addComment.moveForm( &quot;div-comment-2&quot;, &quot;2&quot;, &quot;respond&quot;, &quot;34&quot; )" aria-label="Reply to Hamza Afzaal">Reply</a></div>
+								</div>
 							</div>
 						</div>
 
-						<div class="col-12">
-							<input type="submit" class="btn btn-outline-success theme--btn-outline" value="Post Comment" required/>
+							
+
+							
+
+							
+						</div>
+						<ul class="children">
+							<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="comment-3">
+								<div id="div-comment-3" class="comment-body">
+									<div class="comment-author vcard">
+										<img src="http://1.gravatar.com/avatar/d0086b571459360691b6e90be170d846?s=74&amp;d=http%3A%2F%2Flocalhost%3A8080%2Fneuro_medical_center%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-96x96.png&amp;r=g" width="74" height="74" alt="" class="avatar avatar-74wp-user-avatar wp-user-avatar-74 alignnone photo avatar-default">			<cite class="fn">Dr. Prof. Shahid Hussain Sheikh</cite> <span class="says">says:</span>		</div>
+
+										<div class="comment-meta commentmetadata"><a href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/#comment-3">
+										June 29, 2018 at 8:27 pm</a>		</div>
+
+										<p>funk you</p>
+
+										<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/?replytocom=3#respond" onclick="return addComment.moveForm( &quot;div-comment-3&quot;, &quot;3&quot;, &quot;respond&quot;, &quot;34&quot; )" aria-label="Reply to Dr. Prof. Shahid Hussain Sheikh">Reply</a></div>
+									</div>
+									<ul class="children">
+										<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="comment-3">
+											<div id="div-comment-3" class="comment-body">
+												<div class="comment-author vcard">
+													<img src="http://1.gravatar.com/avatar/d0086b571459360691b6e90be170d846?s=74&amp;d=http%3A%2F%2Flocalhost%3A8080%2Fneuro_medical_center%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-96x96.png&amp;r=g" width="74" height="74" alt="" class="avatar avatar-74wp-user-avatar wp-user-avatar-74 alignnone photo avatar-default">			<cite class="fn">Dr. Prof. Shahid Hussain Sheikh</cite> <span class="says">says:</span>		</div>
+
+													<div class="comment-meta commentmetadata"><a href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/#comment-3">
+													June 29, 2018 at 8:27 pm</a>		</div>
+
+													<p>funk you</p>
+
+													<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/?replytocom=3#respond" onclick="return addComment.moveForm( &quot;div-comment-3&quot;, &quot;3&quot;, &quot;respond&quot;, &quot;34&quot; )" aria-label="Reply to Dr. Prof. Shahid Hussain Sheikh">Reply</a></div>
+												</div>
+											</li><!-- #comment-## -->
+										</ul><!-- .children -->
+									</li><!-- #comment-## -->
+								</ul><!-- .children -->
+							</li><!-- #comment-## -->
+							<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="comment-3">
+								<div id="div-comment-3" class="comment-body">
+									<div class="comment-author vcard">
+										<img src="http://1.gravatar.com/avatar/d0086b571459360691b6e90be170d846?s=74&amp;d=http%3A%2F%2Flocalhost%3A8080%2Fneuro_medical_center%2Fwp-content%2Fplugins%2Fwp-user-avatar%2Fimages%2Fwpua-96x96.png&amp;r=g" width="74" height="74" alt="" class="avatar avatar-74wp-user-avatar wp-user-avatar-74 alignnone photo avatar-default">			<cite class="fn">Dr. Prof. Shahid Hussain Sheikh</cite> <span class="says">says:</span>		</div>
+
+										<div class="comment-meta commentmetadata"><a href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/#comment-3">
+										June 29, 2018 at 8:27 pm</a>		</div>
+
+										<p>funk you</p>
+
+										<div class="reply"><a rel="nofollow" class="comment-reply-link" href="http://localhost:8080/neuro_medical_center/2018/06/28/my-new-blog-post/?replytocom=3#respond" onclick="return addComment.moveForm( &quot;div-comment-3&quot;, &quot;3&quot;, &quot;respond&quot;, &quot;34&quot; )" aria-label="Reply to Dr. Prof. Shahid Hussain Sheikh">Reply</a></div>
+									</div>
+								</li><!-- #comment-## -->
+							</ul><!-- .comment-list -->
 						</div>
 					</div>
-				</form>
-			</div>	
-		</div>
-	</div>
-<script type="text/javascript">
-	$(document).ready(function(){
+	
 
-		/*************************************************************/
-		/**/
+
+			<div class="container-fluid" style="background-color:#f2f2f2;">
+						<div class="container">
+							<div class="col-12 col-sm-10 col-md-8 col-lg-8 comment-box">
+				<!-- <h2>Leave a Reply</h2>
+					<p>Your email address will not be published. Required fields are marked *</p> -->
+					<div id="respond" class="comment-respond">
+						<h3 id="reply-title" class="comment-reply-title"></h3><h2>Leave a Reply</h2> <small><a rel="nofollow" id="cancel-comment-reply-link" href="/neuro_medical_center/2018/06/28/my-new-blog-post/#respond" style="display:none;">Cancel reply</a></small>			<form action="http://localhost:8080/neuro_medical_center/wp-comments-post.php" method="post" id="comment-form" class="form-horizontal" novalidate="novalidate">
+							<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><div class="row">
+								<div class="col-12">
+									<div class="form-group">
+										<label for="comment-text">Comment</label>
+										<textarea type="text" name="comment-text" class="form-control" rows="8" required=""></textarea>
+									</div>
+								</div><div class="col-12 col-sm-12 col-md-4 col-lg-4">
+									<div class="form-group">
+										<label for="comment-name-text">Name</label><span class="required">*</span>
+										<input type="text" value="" "="" size="30" name="comment-name-text" class="form-control" required="">
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+									<div class="form-group">
+										<label for="comment-email-text">
+											Email
+										</label><span class="required">*</span>
+										<input type="text" value="" name="comment-email-text" "="" size="30" class="form-control" required="">
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+									<div class="form-group">
+										<label for="comment-website-text">
+											Website
+										</label>
+										<input type="text" name="comment-website-text" class="form-control" value="" size="30">
+									</div>
+								</div></div>
+								<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" style="margin-right:5px;"><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+								<p class="form-submit"><input name="submit" type="submit" id="submit" class="btn btn-outline-success theme--btn-outline" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="34" id="comment_post_ID">
+									<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+								</p>			</form>
+							</div><!-- #respond -->
+						</div>
+					</div>
+				</div>
+
+
+
+
+			<!-- <div class="container-fluid" style="background-color:#f2f2f2;">
+				<div class="container" >
+					<div class="col-12 col-sm-10 col-md-8 col-lg-8 comment-box">
+						<h2>Leave a Reply</h2>
+						<p>Your email will not be published. Required fields are marked *</p>
+						<form id="comment-form" class="form-horizontal">
+							<div class="row">
+								<div class="col-12">
+									<div class="form-group">
+										<label for="comment-text">
+											Comment *
+										</label>
+										<textarea type="text" name="comment-text" class="form-control" rows="8" required></textarea>
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+									<div class="form-group">
+										<label for="comment-name-text">
+											Name *
+										</label>
+										<input type="text" name="comment-name-text" class="form-control" required/>
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+									<div class="form-group">
+										<label for="comment-email-text">
+											Email *
+										</label>
+										<input type="text" name="comment-email-text" class="form-control" required/>
+									</div>
+								</div>
+								<div class="col-12 col-sm-12 col-md-4 col-lg-4">
+									<div class="form-group">
+										<label for="comment-website-text">
+											Website
+										</label>
+										<input type="text" name="comment-website-text" class="form-control"/>
+									</div>
+								</div>
+
+								<div class="col-12">
+									<input type="submit" class="btn btn-outline-success theme--btn-outline" value="Post Comment" required/>
+								</div>
+							</div>
+						</form>
+					</div>	
+				</div>
+			</div> -->
+			<script type="text/javascript">
+				$(document).ready(function(){
+
+					/*************************************************************/
+					/**/
 		/* Side Panel animation of border and arrow 
 		/**/
 		/*************************************************************/
@@ -161,20 +325,20 @@
 		  // }
 
 		  rules: {
-		    'comment-name-text': "required",
-		    'comment-text': "required",
-		    'comment-email-text': {
-		      required: true,
-		      email: true
-		    }
+		  	'comment-name-text': "required",
+		  	'comment-text': "required",
+		  	'comment-email-text': {
+		  		required: true,
+		  		email: true
+		  	}
 		  },
 		  messages: {
-		    'comment-name-text': "Please specify your name",
-		    'comment-text': "Please specify your comment",
-		    'comment-email-text': {
-		      required: "We need your email address to contact you",
-		      email: "Your email address must be in the format of name@domain.com"
-		    }
+		  	'comment-name-text': "Please specify your name",
+		  	'comment-text': "Please specify your comment",
+		  	'comment-email-text': {
+		  		required: "We need your email address to contact you",
+		  		email: "Your email address must be in the format of name@domain.com"
+		  	}
 		  }
 		});
 

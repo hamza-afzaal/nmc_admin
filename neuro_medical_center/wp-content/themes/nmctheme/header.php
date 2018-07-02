@@ -27,8 +27,8 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Our Staff</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Contact Us</a>
+					<li class="nav-item <?php if(is_page('contact-us')){ echo 'active'; } ?>">
+						<a class="nav-link" href="<?php echo site_url('/contact-us');?>">Contact Us</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">About Us</a>

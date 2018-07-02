@@ -25,7 +25,7 @@
 					<h5>About us</h5>
 					<ul>
 						<li><a href="#">Company Information</a></li>
-						<li><a href="#">Contact us</a></li>
+						<li><a href="<?php site_url('/contact-us') ?>">Contact us</a></li>
 						<li><a href="#">Reviews</a></li>
 					</ul>
 				</div>
@@ -43,7 +43,7 @@
 						<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
 						<a href="#" class="google"><i class="fab fa-youtube"></i></a>
 					</div>
-					<button type="button" class="btn btn-default">Contact us</button>
+					<button onclick="location.replace('<?php echo site_url('/contact-us')?>')" type="button" class="btn btn-default">Contact us</button>
 				</div>
 			</div>
 			<div class="row">
